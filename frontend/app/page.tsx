@@ -9,6 +9,7 @@ import SerachIcon from "@/public/images/search.svg"
 import Image from "next/image";
 import { Modal, useDisclosure } from "@nextui-org/modal";
 import { ModalEdit } from "@/components/modalEdit/ModalEdit";
+import { ToastContainer, toast } from 'react-toastify';
 
 const roboto = Roboto({
   weight: "700",
@@ -38,6 +39,7 @@ export default function Home() {
 
   return (
     <main className={roboto.className}>
+      <ToastContainer />
       <div className="pl-5 pr-5">
         <h1 className="text-[#329cca] text-3xl mt-10">Gestão de Alunos</h1>
         <p className="mt-2 text-[#949494] text-base">Configure e cadastre Alunos</p>

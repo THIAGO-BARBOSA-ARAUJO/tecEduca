@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form"
 import {parseDate, getLocalTimeZone} from "@internationalized/date";
 import api from "@/services/api";
 import moment from "moment"
+import { Slide, toast } from 'react-toastify';
 
 const sexos = [{key: "masculino", label: "Masculino"}, {key: "feminino", label: "Feminino"}, {key: "não informado", label: "Não informado"}]
 
@@ -47,12 +48,62 @@ export function EditStudent({getAllStudents, getStudent, typeModal, studentEdit,
        data.startCourse = startCourse
 
        if(typeModal == "Edit") {
-          console.log("Edit")
-          await api.put(`/student/${studentEdit._id}`, data)
+          const resp = await api.put(`/student/${studentEdit._id}`, data)
+          if(resp.status === 200) {
+            toast.success("Aluno atualizado com sucesso!"), {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Slide,
+            }
+          }else {
+            toast.error("Aluno não atualizado!"), {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Slide,
+            }
+          }
        }else {
-          await api.post('student', data)
+         const respi = await api.post('student', data)
+         if(respi.status === 201) {
+            toast.success("Aluno cadastrado com sucesso!"), {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Slide,
+            }
+         }else {
+            toast.error("Não foi possível cadastrar o aluno!"), {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Slide,
+            }
+         }
        }
        await getAllStudents()
+       
        onClose()
     }
 
@@ -62,7 +113,7 @@ export function EditStudent({getAllStudents, getStudent, typeModal, studentEdit,
     }, [])
 
     return (
-        <div className=" flex flex-col pl-8 pr-8 bg-white shadow-2xl m-auto w-[calc(100vw-150px)] h-[calc(100vh-100px)] mt-[-100px]">
+        <div className="flex flex-col pl-8 pr-8 bg-white shadow-2xl m-auto w-[calc(100vw-150px)] h-[calc(100vh-100px)] mt-[-100px]">
             <form onSubmit={handleSubmit(handleFilterProducts)} className="mt-14 flex-col flex overflow-x-hidden overflow-y-auto	">
                 <div className="flex gap-20">
                     <div className="flex flex-col w-full">

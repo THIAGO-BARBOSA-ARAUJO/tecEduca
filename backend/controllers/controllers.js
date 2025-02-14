@@ -32,7 +32,7 @@ const getStudent = async (request, response) => {
 
     if(student.length === 0) {
         const studentcpf = await Alunos.find({
-            cpf: Number(search)
+            cpf: {$regex: Number(search)}
         })
 
         if(studentcpf.length === 0) {
