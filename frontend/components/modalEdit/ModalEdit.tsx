@@ -1,5 +1,4 @@
 import api from "@/services/api";
-import { Button } from "@nextui-org/button";
 import {
     Modal, 
     ModalContent, 

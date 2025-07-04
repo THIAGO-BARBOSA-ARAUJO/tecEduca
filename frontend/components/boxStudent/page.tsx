@@ -19,12 +19,14 @@ import {
   import {Tooltip} from "@nextui-org/tooltip";
   import Image from 'next/image'
   import Link from 'next/link'
+  import StudentNotFound from "@/public/images/student_notfound.png"
   import Edit from '@/public/images/edit.svg'
   import View from '@/public/images/view.png'
   import Trash from '@/public/images/lixeira.png'
   import { ModalDelete } from "../modalDelete/page";
   import { ModalEdit } from "../modalEdit/ModalEdit";
   import api from "@/services/api";
+import { Slide, toast } from "react-toastify";
 
   type StudentType = {
     name: string,
@@ -75,20 +77,46 @@ import {
 
 export function BoxStudent( { students, setStudents } ) {
 
-    const {isOpen, onOpen, onOpenChange} = useDisclosure();
+    const {isOpen, onOpen, onOpenChange} = useDisclosure()
     const [ modal, setModal ] = useState('')
     const [ nameStudent, setNameStudent ] = useState('')
     const [ idStudent, setIdStudent ] = useState('')
     
 
-    function deleteStudent(id: string) {
-        console.log(id)
-        api.delete(`/student/${id}`)
+    async function  deleteStudent(id: string) {
+        const resp = await api.delete(`/student/${id}`)
+        if(resp.status === 200) {
+            toast.success("Aluno deletado com sucesso!"), {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Slide,
+            }
         getAllStudents()
+
+        }else {
+            toast.error("Não foi possível deletar o aluno!"), {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Slide,
+            }
+        }
+        
     }
 
     function EditStudentForm(id: string) {
-        console.log("lalalala")
+        //console.log("lalalala")
     }
 
     async function getAllStudents() {
@@ -116,7 +144,7 @@ export function BoxStudent( { students, setStudents } ) {
                     <TableColumn>Actions</TableColumn>
                 </TableHeader>
             
-                <TableBody>
+                <TableBody className="mt-8 w-full flex items-center justify-center">
                     {students.map((student: StudentType, index: number) => (
                         <TableRow className="shadow-md h-16" key={index}>
                             <TableCell>{student.name}</TableCell>
@@ -154,7 +182,8 @@ export function BoxStudent( { students, setStudents } ) {
                 </Table>
                 
                 : 
-                   students.message
+                   //students.message
+                   <Image className="mt-5 flex items-center justify-center"  width={300} height={300} src={StudentNotFound} alt='Aluno não encontrado.' />
             }
             
             <Modal size={modal === "Delete" ? "md": "full"} backdrop="opaque" isOpen={isOpen} isDismissable={false} onOpenChange={onOpenChange}>

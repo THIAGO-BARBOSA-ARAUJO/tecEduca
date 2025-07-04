@@ -237,6 +237,11 @@ function EditStudent({ getAllStudents, getStudent, typeModal, studentEdit, onClo
     const { register, handleSubmit, formState: { errors } } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useForm"])();
     const [startCourse, setStartCourse] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])();
     const [dateBirth, setDateBirth] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])();
+    const [cep, setCep] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])();
+    async function queryCode(cep) {
+    // const resp = await api.get(`cep/${cep}`)
+    // setCep(resp)
+    }
     async function handleFilterProducts(data) {
         switch(data.course){
             case '0':
@@ -348,12 +353,12 @@ function EditStudent({ getAllStudents, getStudent, typeModal, studentEdit, onClo
                                 errorMessage: "Por favor insira o nome!"
                             }, void 0, false, {
                                 fileName: "[project]/components/boxStudent/edit.tsx",
-                                lineNumber: 120,
+                                lineNumber: 127,
                                 columnNumber: 25
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/boxStudent/edit.tsx",
-                            lineNumber: 119,
+                            lineNumber: 126,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -369,18 +374,18 @@ function EditStudent({ getAllStudents, getStudent, typeModal, studentEdit, onClo
                                 color: errors.register ? "danger" : "default"
                             }, void 0, false, {
                                 fileName: "[project]/components/boxStudent/edit.tsx",
-                                lineNumber: 132,
+                                lineNumber: 139,
                                 columnNumber: 25
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/boxStudent/edit.tsx",
-                            lineNumber: 131,
+                            lineNumber: 138,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/boxStudent/edit.tsx",
-                    lineNumber: 118,
+                    lineNumber: 125,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -390,11 +395,11 @@ function EditStudent({ getAllStudents, getStudent, typeModal, studentEdit, onClo
                             ...register("cpf"),
                             defaultValue: studentEdit?.cpf,
                             label: "Cpf*",
-                            placeholder: "Digite o nome do Aluno",
+                            placeholder: "Digite o cpf do Aluno",
                             variant: "underlined"
                         }, void 0, false, {
                             fileName: "[project]/components/boxStudent/edit.tsx",
-                            lineNumber: 143,
+                            lineNumber: 150,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$input$2f$dist$2f$chunk$2d$IR2E3HZF$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__input_default__as__Input$3e$__["Input"], {
@@ -405,25 +410,25 @@ function EditStudent({ getAllStudents, getStudent, typeModal, studentEdit, onClo
                             variant: "underlined"
                         }, void 0, false, {
                             fileName: "[project]/components/boxStudent/edit.tsx",
-                            lineNumber: 145,
+                            lineNumber: 152,
                             columnNumber: 21
                         }, this),
                         typeModal === "Edit" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$date$2d$picker$2f$dist$2f$chunk$2d$A2IMTEBJ$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__date_picker_default__as__DatePicker$3e$__["DatePicker"], {
                             defaultValue: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$internationalized$2f$date$2f$dist$2f$string$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["parseDate"])(`${studentEdit?.dateBirth?.split("T")[0]}`),
-                            onChange: (data)=>setDateBirth(data),
+                            onChange: (data)=>setDateBirth((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$moment$2f$moment$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(data).subtract(1, 'months').format()),
                             label: "Data de Nascimento",
                             variant: "underlined"
                         }, void 0, false, {
                             fileName: "[project]/components/boxStudent/edit.tsx",
-                            lineNumber: 150,
+                            lineNumber: 157,
                             columnNumber: 26
                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$date$2d$picker$2f$dist$2f$chunk$2d$A2IMTEBJ$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__date_picker_default__as__DatePicker$3e$__["DatePicker"], {
-                            onChange: (data)=>setDateBirth((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$moment$2f$moment$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(data).format()),
+                            onChange: (data)=>setDateBirth((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$moment$2f$moment$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(data).subtract(1, 'months').format()),
                             label: "Data de Nascimento",
                             variant: "underlined"
                         }, void 0, false, {
                             fileName: "[project]/components/boxStudent/edit.tsx",
-                            lineNumber: 154,
+                            lineNumber: 161,
                             columnNumber: 26
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$select$2f$dist$2f$chunk$2d$7H6JMIKS$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__select_default__as__Select$3e$__["Select"], {
@@ -437,18 +442,18 @@ function EditStudent({ getAllStudents, getStudent, typeModal, studentEdit, onClo
                                     children: sexo.label
                                 }, sexo.key, false, {
                                     fileName: "[project]/components/boxStudent/edit.tsx",
-                                    lineNumber: 159,
+                                    lineNumber: 166,
                                     columnNumber: 29
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/components/boxStudent/edit.tsx",
-                            lineNumber: 157,
+                            lineNumber: 164,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/boxStudent/edit.tsx",
-                    lineNumber: 142,
+                    lineNumber: 149,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -462,24 +467,24 @@ function EditStudent({ getAllStudents, getStudent, typeModal, studentEdit, onClo
                             variant: "underlined"
                         }, void 0, false, {
                             fileName: "[project]/components/boxStudent/edit.tsx",
-                            lineNumber: 167,
+                            lineNumber: 174,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$input$2f$dist$2f$chunk$2d$IR2E3HZF$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__input_default__as__Input$3e$__["Input"], {
                             ...register("motherName"),
-                            value: studentEdit?.motherName,
+                            defaultValue: studentEdit?.motherName,
                             label: "Nome da Mãe",
                             placeholder: "Digite o Nome da Mãe do Aluno",
                             variant: "underlined"
                         }, void 0, false, {
                             fileName: "[project]/components/boxStudent/edit.tsx",
-                            lineNumber: 169,
+                            lineNumber: 176,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/boxStudent/edit.tsx",
-                    lineNumber: 166,
+                    lineNumber: 173,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -487,35 +492,36 @@ function EditStudent({ getAllStudents, getStudent, typeModal, studentEdit, onClo
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$input$2f$dist$2f$chunk$2d$IR2E3HZF$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__input_default__as__Input$3e$__["Input"], {
                             ...register("profission"),
-                            value: studentEdit?.profission,
+                            defaultValue: studentEdit?.profission,
                             label: "Profissão",
                             placeholder: "Digite a profissão do Aluno",
                             variant: "underlined"
                         }, void 0, false, {
                             fileName: "[project]/components/boxStudent/edit.tsx",
-                            lineNumber: 173,
+                            lineNumber: 180,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$input$2f$dist$2f$chunk$2d$IR2E3HZF$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__input_default__as__Input$3e$__["Input"], {
                             ...register("maritalState"),
-                            value: studentEdit?.maritalState,
+                            defaultValue: studentEdit?.maritalState,
                             label: "Estado civil",
                             placeholder: "Digite o Estado civil do Aluno",
                             variant: "underlined"
                         }, void 0, false, {
                             fileName: "[project]/components/boxStudent/edit.tsx",
-                            lineNumber: 175,
+                            lineNumber: 182,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$input$2f$dist$2f$chunk$2d$IR2E3HZF$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__input_default__as__Input$3e$__["Input"], {
                             ...register("financialSituation"),
-                            value: studentEdit?.financialSituation,
+                            "aria-label": "situação financeira",
+                            defaultValue: studentEdit?.financialSituation,
                             label: "Situação Financeira",
                             placeholder: "Digite a Situação Finaceira do Aluno",
                             variant: "underlined"
                         }, void 0, false, {
                             fileName: "[project]/components/boxStudent/edit.tsx",
-                            lineNumber: 177,
+                            lineNumber: 184,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$select$2f$dist$2f$chunk$2d$7H6JMIKS$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__select_default__as__Select$3e$__["Select"], {
@@ -529,18 +535,18 @@ function EditStudent({ getAllStudents, getStudent, typeModal, studentEdit, onClo
                                     children: course.label
                                 }, course.key, false, {
                                     fileName: "[project]/components/boxStudent/edit.tsx",
-                                    lineNumber: 181,
+                                    lineNumber: 188,
                                     columnNumber: 29
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/components/boxStudent/edit.tsx",
-                            lineNumber: 179,
+                            lineNumber: 186,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/boxStudent/edit.tsx",
-                    lineNumber: 172,
+                    lineNumber: 179,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -555,31 +561,31 @@ function EditStudent({ getAllStudents, getStudent, typeModal, studentEdit, onClo
                             variant: "underlined"
                         }, void 0, false, {
                             fileName: "[project]/components/boxStudent/edit.tsx",
-                            lineNumber: 189,
+                            lineNumber: 196,
                             columnNumber: 21
                         }, this),
                         typeModal === "Edit" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$date$2d$picker$2f$dist$2f$chunk$2d$A2IMTEBJ$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__date_picker_default__as__DatePicker$3e$__["DatePicker"], {
                             defaultValue: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$internationalized$2f$date$2f$dist$2f$string$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["parseDate"])(`${studentEdit?.startCourse?.split("T")[0]}`),
-                            onChange: (data)=>setStartCourse((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$moment$2f$moment$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(data).format()),
+                            onChange: (data)=>setStartCourse((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$moment$2f$moment$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(data).subtract(1, 'months').format()),
                             label: "Inicio do Curso",
                             variant: "underlined"
                         }, void 0, false, {
                             fileName: "[project]/components/boxStudent/edit.tsx",
-                            lineNumber: 196,
+                            lineNumber: 203,
                             columnNumber: 26
                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$date$2d$picker$2f$dist$2f$chunk$2d$A2IMTEBJ$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__date_picker_default__as__DatePicker$3e$__["DatePicker"], {
-                            onChange: (data)=>setStartCourse((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$moment$2f$moment$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(data).format()),
+                            onChange: (data)=>setStartCourse((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$moment$2f$moment$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(data).subtract(1, 'months').format()),
                             label: "Inicio do Curso",
                             variant: "underlined"
                         }, void 0, false, {
                             fileName: "[project]/components/boxStudent/edit.tsx",
-                            lineNumber: 200,
+                            lineNumber: 207,
                             columnNumber: 26
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/boxStudent/edit.tsx",
-                    lineNumber: 188,
+                    lineNumber: 195,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -587,7 +593,7 @@ function EditStudent({ getAllStudents, getStudent, typeModal, studentEdit, onClo
                     children: "Endereço"
                 }, void 0, false, {
                     fileName: "[project]/components/boxStudent/edit.tsx",
-                    lineNumber: 205,
+                    lineNumber: 212,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -595,42 +601,42 @@ function EditStudent({ getAllStudents, getStudent, typeModal, studentEdit, onClo
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$input$2f$dist$2f$chunk$2d$IR2E3HZF$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__input_default__as__Input$3e$__["Input"], {
                             ...register("logradouro"),
-                            value: studentEdit?.logradouro,
+                            defaultValue: studentEdit?.logradouro,
                             label: "Rua",
                             placeholder: "Digite a Rua do Aluno",
                             variant: "underlined"
                         }, void 0, false, {
                             fileName: "[project]/components/boxStudent/edit.tsx",
-                            lineNumber: 208,
+                            lineNumber: 215,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$input$2f$dist$2f$chunk$2d$IR2E3HZF$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__input_default__as__Input$3e$__["Input"], {
                             ...register("numberHouse"),
-                            value: studentEdit?.numberHouse,
+                            defaultValue: studentEdit?.numberHouse,
                             type: "number",
                             label: "Número",
                             placeholder: "Digite o Número da Casa do Aluno",
                             variant: "underlined"
                         }, void 0, false, {
                             fileName: "[project]/components/boxStudent/edit.tsx",
-                            lineNumber: 210,
+                            lineNumber: 217,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$input$2f$dist$2f$chunk$2d$IR2E3HZF$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__input_default__as__Input$3e$__["Input"], {
                             ...register("complement"),
-                            value: studentEdit?.complement,
+                            defaultValue: studentEdit?.complement,
                             label: "Complemento",
                             placeholder: "Digite o Complemento do Aluno",
                             variant: "underlined"
                         }, void 0, false, {
                             fileName: "[project]/components/boxStudent/edit.tsx",
-                            lineNumber: 212,
+                            lineNumber: 219,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/boxStudent/edit.tsx",
-                    lineNumber: 207,
+                    lineNumber: 214,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -638,42 +644,43 @@ function EditStudent({ getAllStudents, getStudent, typeModal, studentEdit, onClo
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$input$2f$dist$2f$chunk$2d$IR2E3HZF$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__input_default__as__Input$3e$__["Input"], {
                             ...register("neighborhood"),
-                            value: studentEdit?.neighborhood,
+                            defaultValue: studentEdit?.neighborhood,
                             label: "Bairro",
                             placeholder: "Digite o Bairro do Aluno",
                             variant: "underlined"
                         }, void 0, false, {
                             fileName: "[project]/components/boxStudent/edit.tsx",
-                            lineNumber: 216,
+                            lineNumber: 223,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$input$2f$dist$2f$chunk$2d$IR2E3HZF$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__input_default__as__Input$3e$__["Input"], {
                             ...register("state"),
-                            value: studentEdit?.state,
+                            defaultValue: studentEdit?.state,
                             label: "Estado",
                             placeholder: "Digite o Estado do Aluno",
                             variant: "underlined"
                         }, void 0, false, {
                             fileName: "[project]/components/boxStudent/edit.tsx",
-                            lineNumber: 218,
+                            lineNumber: 225,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$input$2f$dist$2f$chunk$2d$IR2E3HZF$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__input_default__as__Input$3e$__["Input"], {
                             ...register("cep"),
-                            value: studentEdit?.cep,
+                            onChange: (cep)=>queryCode(cep.target.value),
+                            defaultValue: studentEdit?.cep,
                             type: "number",
                             label: "Cep",
                             placeholder: "Digite o Cep do Aluno",
                             variant: "underlined"
                         }, void 0, false, {
                             fileName: "[project]/components/boxStudent/edit.tsx",
-                            lineNumber: 220,
+                            lineNumber: 227,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/boxStudent/edit.tsx",
-                    lineNumber: 215,
+                    lineNumber: 222,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
@@ -686,7 +693,7 @@ function EditStudent({ getAllStudents, getStudent, typeModal, studentEdit, onClo
                             children: "Cancelar"
                         }, void 0, false, {
                             fileName: "[project]/components/boxStudent/edit.tsx",
-                            lineNumber: 224,
+                            lineNumber: 231,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$button$2f$dist$2f$chunk$2d$DBLREEYE$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__button_default__as__Button$3e$__["Button"], {
@@ -696,28 +703,28 @@ function EditStudent({ getAllStudents, getStudent, typeModal, studentEdit, onClo
                             children: typeModal === "Edit" ? "Salvar" : "Cadastrar"
                         }, void 0, false, {
                             fileName: "[project]/components/boxStudent/edit.tsx",
-                            lineNumber: 228,
+                            lineNumber: 235,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/boxStudent/edit.tsx",
-                    lineNumber: 223,
+                    lineNumber: 230,
                     columnNumber: 17
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/boxStudent/edit.tsx",
-            lineNumber: 117,
+            lineNumber: 124,
             columnNumber: 13
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/boxStudent/edit.tsx",
-        lineNumber: 116,
+        lineNumber: 123,
         columnNumber: 9
     }, this);
 }
-_s(EditStudent, "06PbmdXLVG3oJxHvLTqfWQouJyg=", false, function() {
+_s(EditStudent, "lrPQkY78IG/YlEyFi2LGxjoMAKw=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useForm"]
     ];
@@ -773,19 +780,19 @@ function ModalEdit({ getAllStudents, onSubmit, nameStudent, typeModal }) {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/modalEdit/ModalEdit.tsx",
-                            lineNumber: 43,
+                            lineNumber: 42,
                             columnNumber: 25
                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "text-[white] h-32",
                             children: "CADASTRAR"
                         }, void 0, false, {
                             fileName: "[project]/components/modalEdit/ModalEdit.tsx",
-                            lineNumber: 46,
+                            lineNumber: 45,
                             columnNumber: 25
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/modalEdit/ModalEdit.tsx",
-                        lineNumber: 40,
+                        lineNumber: 39,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$modal$2f$dist$2f$chunk$2d$EPDLEVDR$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__modal_body_default__as__ModalBody$3e$__["ModalBody"], {
@@ -797,26 +804,26 @@ function ModalEdit({ getAllStudents, onSubmit, nameStudent, typeModal }) {
                             onClose: onClose
                         }, void 0, false, {
                             fileName: "[project]/components/modalEdit/ModalEdit.tsx",
-                            lineNumber: 54,
+                            lineNumber: 53,
                             columnNumber: 22
                         }, this) : "Carregando"
                     }, void 0, false, {
                         fileName: "[project]/components/modalEdit/ModalEdit.tsx",
-                        lineNumber: 50,
+                        lineNumber: 49,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$modal$2f$dist$2f$chunk$2d$QY5NICTW$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__modal_footer_default__as__ModalFooter$3e$__["ModalFooter"], {
                         className: "pr-10 pb-5"
                     }, void 0, false, {
                         fileName: "[project]/components/modalEdit/ModalEdit.tsx",
-                        lineNumber: 60,
+                        lineNumber: 59,
                         columnNumber: 13
                     }, this)
                 ]
             }, void 0, true)
     }, void 0, false, {
         fileName: "[project]/components/modalEdit/ModalEdit.tsx",
-        lineNumber: 37,
+        lineNumber: 36,
         columnNumber: 9
     }, this);
 }
@@ -844,14 +851,18 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$use$2d$disclosure$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/@nextui-org/use-disclosure/dist/index.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$tooltip$2f$dist$2f$chunk$2d$LY4WDGUU$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__tooltip_default__as__Tooltip$3e$__ = __turbopack_import__("[project]/node_modules/@nextui-org/tooltip/dist/chunk-LY4WDGUU.mjs [app-client] (ecmascript) <export tooltip_default as Tooltip>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/image.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$images$2f$student_notfound$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$images$2f$student_notfound$2e$png__$5b$app$2d$client$5d$__$28$static$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object$2c$__ecmascript$29$__ = __turbopack_import__('[project]/public/images/student_notfound.png.mjs { IMAGE => "[project]/public/images/student_notfound.png [app-client] (static)" } [app-client] (structured image object, ecmascript)');
 var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$images$2f$edit$2e$svg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$images$2f$edit$2e$svg__$5b$app$2d$client$5d$__$28$static$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object$2c$__ecmascript$29$__ = __turbopack_import__('[project]/public/images/edit.svg.mjs { IMAGE => "[project]/public/images/edit.svg [app-client] (static)" } [app-client] (structured image object, ecmascript)');
 var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$images$2f$lixeira$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$images$2f$lixeira$2e$png__$5b$app$2d$client$5d$__$28$static$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object$2c$__ecmascript$29$__ = __turbopack_import__('[project]/public/images/lixeira.png.mjs { IMAGE => "[project]/public/images/lixeira.png [app-client] (static)" } [app-client] (structured image object, ecmascript)');
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$modalDelete$2f$page$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/modalDelete/page.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$modalEdit$2f$ModalEdit$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/components/modalEdit/ModalEdit.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$services$2f$api$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/services/api.ts [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/react-toastify/dist/index.mjs [app-client] (ecmascript)");
 "__TURBOPACK__ecmascript__hoisting__location__";
 ;
 var _s = __turbopack_refresh__.signature();
+;
+;
 ;
 ;
 ;
@@ -868,13 +879,37 @@ function BoxStudent({ students, setStudents }) {
     const [modal, setModal] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
     const [nameStudent, setNameStudent] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
     const [idStudent, setIdStudent] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
-    function deleteStudent(id) {
-        console.log(id);
-        __TURBOPACK__imported__module__$5b$project$5d2f$services$2f$api$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].delete(`/student/${id}`);
-        getAllStudents();
+    async function deleteStudent(id) {
+        const resp = await __TURBOPACK__imported__module__$5b$project$5d2f$services$2f$api$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].delete(`/student/${id}`);
+        if (resp.status === 200) {
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].success("Aluno deletado com sucesso!"), {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Slide"]
+            };
+            getAllStudents();
+        } else {
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].error("Não foi possível deletar o aluno!"), {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Slide"]
+            };
+        }
     }
     function EditStudentForm(id) {
-        console.log("lalalala");
+    //console.log("lalalala")
     }
     async function getAllStudents() {
         const students = await __TURBOPACK__imported__module__$5b$project$5d2f$services$2f$api$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].get('students');
@@ -898,41 +933,41 @@ function BoxStudent({ students, setStudents }) {
                                 children: "NOME"
                             }, void 0, false, {
                                 fileName: "[project]/components/boxStudent/page.tsx",
-                                lineNumber: 112,
+                                lineNumber: 140,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$table$2f$dist$2f$chunk$2d$TSPNSPCL$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__table_column_default__as__TableColumn$3e$__["TableColumn"], {
                                 children: "CPF"
                             }, void 0, false, {
                                 fileName: "[project]/components/boxStudent/page.tsx",
-                                lineNumber: 113,
+                                lineNumber: 141,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$table$2f$dist$2f$chunk$2d$TSPNSPCL$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__table_column_default__as__TableColumn$3e$__["TableColumn"], {
                                 children: "EMAIL"
                             }, void 0, false, {
                                 fileName: "[project]/components/boxStudent/page.tsx",
-                                lineNumber: 114,
+                                lineNumber: 142,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$table$2f$dist$2f$chunk$2d$TSPNSPCL$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__table_column_default__as__TableColumn$3e$__["TableColumn"], {
                                 children: "COURSE"
                             }, void 0, false, {
                                 fileName: "[project]/components/boxStudent/page.tsx",
-                                lineNumber: 115,
+                                lineNumber: 143,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$table$2f$dist$2f$chunk$2d$TSPNSPCL$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__table_column_default__as__TableColumn$3e$__["TableColumn"], {
                                 children: "Actions"
                             }, void 0, false, {
                                 fileName: "[project]/components/boxStudent/page.tsx",
-                                lineNumber: 116,
+                                lineNumber: 144,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/boxStudent/page.tsx",
-                        lineNumber: 111,
+                        lineNumber: 139,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$table$2f$dist$2f$chunk$2d$FKPXBCGS$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__table_body_default__as__TableBody$3e$__["TableBody"], {
@@ -943,28 +978,28 @@ function BoxStudent({ students, setStudents }) {
                                         children: student.name
                                     }, void 0, false, {
                                         fileName: "[project]/components/boxStudent/page.tsx",
-                                        lineNumber: 122,
+                                        lineNumber: 150,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$table$2f$dist$2f$chunk$2d$F3UDT23P$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__table_cell_default__as__TableCell$3e$__["TableCell"], {
                                         children: student.cpf
                                     }, void 0, false, {
                                         fileName: "[project]/components/boxStudent/page.tsx",
-                                        lineNumber: 123,
+                                        lineNumber: 151,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$table$2f$dist$2f$chunk$2d$F3UDT23P$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__table_cell_default__as__TableCell$3e$__["TableCell"], {
                                         children: student.email
                                     }, void 0, false, {
                                         fileName: "[project]/components/boxStudent/page.tsx",
-                                        lineNumber: 124,
+                                        lineNumber: 152,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$table$2f$dist$2f$chunk$2d$F3UDT23P$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__table_cell_default__as__TableCell$3e$__["TableCell"], {
                                         children: student.course
                                     }, void 0, false, {
                                         fileName: "[project]/components/boxStudent/page.tsx",
-                                        lineNumber: 125,
+                                        lineNumber: 153,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$table$2f$dist$2f$chunk$2d$F3UDT23P$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__table_cell_default__as__TableCell$3e$__["TableCell"], {
@@ -987,12 +1022,12 @@ function BoxStudent({ students, setStudents }) {
                                                         alt: "imagem de visualização"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/boxStudent/page.tsx",
-                                                        lineNumber: 133,
+                                                        lineNumber: 161,
                                                         columnNumber: 37
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/boxStudent/page.tsx",
-                                                    lineNumber: 132,
+                                                    lineNumber: 160,
                                                     columnNumber: 33
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$tooltip$2f$dist$2f$chunk$2d$LY4WDGUU$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__tooltip_default__as__Tooltip$3e$__["Tooltip"], {
@@ -1011,42 +1046,53 @@ function BoxStudent({ students, setStudents }) {
                                                         alt: "imagem de exclusão"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/boxStudent/page.tsx",
-                                                        lineNumber: 142,
+                                                        lineNumber: 170,
                                                         columnNumber: 37
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/boxStudent/page.tsx",
-                                                    lineNumber: 140,
+                                                    lineNumber: 168,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/boxStudent/page.tsx",
-                                            lineNumber: 127,
+                                            lineNumber: 155,
                                             columnNumber: 29
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/boxStudent/page.tsx",
-                                        lineNumber: 126,
+                                        lineNumber: 154,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, index, true, {
                                 fileName: "[project]/components/boxStudent/page.tsx",
-                                lineNumber: 121,
+                                lineNumber: 149,
                                 columnNumber: 25
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/components/boxStudent/page.tsx",
-                        lineNumber: 119,
+                        lineNumber: 147,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/boxStudent/page.tsx",
-                lineNumber: 110,
+                lineNumber: 138,
                 columnNumber: 17
-            }, this) : students.message,
+            }, this) : //students.message
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                className: "cursor-pointer",
+                width: 24,
+                height: 24,
+                src: __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$images$2f$student_notfound$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$images$2f$student_notfound$2e$png__$5b$app$2d$client$5d$__$28$static$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object$2c$__ecmascript$29$__["default"],
+                alt: "Aluno não encontrado."
+            }, void 0, false, {
+                fileName: "[project]/components/boxStudent/page.tsx",
+                lineNumber: 186,
+                columnNumber: 20
+            }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$nextui$2d$org$2f$modal$2f$dist$2f$chunk$2d$KMN6V4NS$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__modal_default__as__Modal$3e$__["Modal"], {
                 size: modal === "Delete" ? "md" : "full",
                 backdrop: "opaque",
@@ -1059,7 +1105,7 @@ function BoxStudent({ students, setStudents }) {
                     onSubmit: ()=>deleteStudent(idStudent)
                 }, void 0, false, {
                     fileName: "[project]/components/boxStudent/page.tsx",
-                    lineNumber: 162,
+                    lineNumber: 191,
                     columnNumber: 42
                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$modalEdit$2f$ModalEdit$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ModalEdit"], {
                     getAllStudents: getAllStudents,
@@ -1068,12 +1114,12 @@ function BoxStudent({ students, setStudents }) {
                     typeModal: "Edit"
                 }, void 0, false, {
                     fileName: "[project]/components/boxStudent/page.tsx",
-                    lineNumber: 162,
+                    lineNumber: 191,
                     columnNumber: 181
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/boxStudent/page.tsx",
-                lineNumber: 160,
+                lineNumber: 189,
                 columnNumber: 13
             }, this)
         ]

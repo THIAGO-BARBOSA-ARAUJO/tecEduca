@@ -1,5 +1,6 @@
 import moment from "moment"
 import Alunos from "../models/User.js"
+import axios from "axios"
 
 
 const getAllStudents = async (request, response) => {
@@ -11,12 +12,10 @@ const registrationStudent = async (request, response) => {
     let student = request.body
 
     student.name = student.name.toLowerCase()
-   console.log(student.startCourse)
     const alunoIsExist = await Alunos.findOne({
         cpf: student.cpf
     })
     
-    console.log(alunoIsExist)
     if(alunoIsExist) {
         return  response.status(400).send({ message: "Usuário já cadastrado!" })
     }else {
@@ -36,7 +35,7 @@ const getStudent = async (request, response) => {
         })
 
         if(studentcpf.length === 0) {
-            return response.json({message: "Nenhum usuário encontrado!"})
+            return response.json({message: "Nenhum aluno encontrado!"})
         }else {
             return response.json(studentcpf)
         }
@@ -61,12 +60,26 @@ const deleteStudent = async (request, response) => {
     const { id } = request.params
 
     const deletedStudent = await Alunos.findByIdAndDelete(id)
-
+    
     if(!deletedStudent) {
-        return response.status(400).send({message: "não foi possível deletar o aluno!"})
+        return response.status(404).send({message: "não foi possível deletar o aluno!"})
     }else {
-        return response.status(200).send({message: "Aluno deltado com sucesso!"})
+        return response.status(200).send({message: "Aluno deletado com sucesso!"})
     }
 }
 
-export { registrationStudent, getAllStudents, getStudent, updateStudent, deleteStudent }
+const getCep = async (request, response) => {
+    const { cep } = request.params
+
+    try{
+        const resp = await axios.get(`https://viacep.com.br/ws/${cep}/json/`)
+        return response.status(200).send(resp.data)
+    }catch{
+        return response.status(404).send({message: "Cep não encontrado!"})
+    }
+    
+}
+
+
+
+export { registrationStudent, getAllStudents, getStudent, updateStudent, deleteStudent, getCep }

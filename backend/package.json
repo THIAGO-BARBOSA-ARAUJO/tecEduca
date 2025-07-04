@@ -11,6 +11,7 @@
   "license": "ISC",
   "description": " api de busca e cadastro de alunos.",
   "dependencies": {
+    "axios": "^1.10.0",
     "cors": "^2.8.5",
     "express": "^4.21.0",
     "moment": "^2.30.1",
